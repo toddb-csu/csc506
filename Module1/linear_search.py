@@ -24,6 +24,29 @@ if __name__ == "__main__":
     # Setup code for using timeit
     SETUP_CODE = '''
 from __main__ import linear_search
+import requests
+'''
+
+    TEST_FIND = '''
+database = []
+url = "https://random-data-api.com/api/v2/appliances?size=100"
+response = requests.get(url)
+if response.status_code == 200:
+    data = response.json()
+    for row in data:
+        database.append(row["equipment"])
+find = "mousetrap"
+result = linear_search(database, find)
+print(f"Found {find} in list of {len(database)} items")
+'''
+
+    print(f"Example of linear search in large online marketplace database")
+    time_taken = timeit.timeit(stmt=TEST_FIND, setup=SETUP_CODE, number=1)
+    print(f"Linear search database time taken: {time_taken} seconds\n")
+
+    # Setup code for using timeit
+    SETUP_CODE = '''
+from __main__ import linear_search
 from random import randint
 '''
 
