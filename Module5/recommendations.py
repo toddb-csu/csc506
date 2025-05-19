@@ -208,19 +208,3 @@ if __name__ == "__main__":
             print(f"- {content_id}: {content_data['title']} (Score: {score:.2f})")
     else:
         print("No recommendations generated.")
-
-    # Retrieve user recommendations
-    # user = "user123"
-    # recs = recommendations.search(user)
-    # print(f"Recommendations for {user}: {recs}")
-
-    # Update recommendations
-    # recommendations.insert("user123", ["post8", "post9"])
-
-    # Retrieve updated recommendations
-    # recs_updated = recommendations.search("user123")
-    # print(f"Updated recommendations for {user}: {recs_updated}")
-
-    # Delete user recommendations
-    # recommendations.delete("user456")
-    # print(f"Recommendations for user456 after deletion: {recommendations.search('user456')}")
